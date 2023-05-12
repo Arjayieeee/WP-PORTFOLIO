@@ -1,0 +1,296 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container{
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+html{
+    overflow-x:hidden;
+    scroll-behavior: smooth;
+}
+
+
+@layer components{
+
+    .header{
+box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+z-index:999;
+    }
+.header__nav.open{
+        @apply right-0  ease-in duration-[300ms]
+    }
+
+    
+    .toggle__menu{
+        @apply flex flex-col items-center justify-center 
+    }
+    .toggle__menu span{
+        @apply w-[2.5rem] h-[.3rem] bg-white block rounded-[1rem]
+    }
+    .toggle__menu span:nth-child(2){
+        @apply my-[.35rem] h-[.35rem] w-[2.7rem]
+    }
+    .toggle__menu span:first-child{
+        @apply w-[2rem]   
+    }
+    .toggle__menu span:last-child{
+        @apply w-[2rem] 
+    }
+
+    .toggle__menu.open span:nth-child(2){
+        @apply opacity-0
+    }
+    .toggle__menu.open span:first-child{
+        @apply rotate-[220deg] translate-y-[1rem]  ease-in duration-[300ms]
+    }
+    .toggle__menu.open span:last-child{
+        @apply rotate-[-220deg] translate-y-[-.3rem]  ease-in duration-[300ms]
+    }
+
+
+    /* BANNER */
+    .banner .buttons h2{
+        @apply py-[.5rem] border-solid border-2 border-white w-[10rem] rounded-[50rem]
+    }
+    .banner .buttons h3{
+        @apply py-[.5rem] border-solid border-2 border-transparent bg-secondary   w-[10rem]  rounded-[50rem]
+    }
+    .banner .buttons h3:hover{
+        @apply lg:bg-transparent lg:border-[2px] lg:border-secondary lg:text-[white]
+    }
+
+       /* AbOUT */
+    .about__content h2{
+        font-family: "Pompiere"
+    }
+    .socmed li:hover i{
+        @apply translate-y-[-.5rem] ease-in-out duration-[300ms] text-secondary 
+    }   
+    
+           /* SKKILLS */
+    .skills__wrapper .skills__content .box{
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+    .skills__wrapper .skills__content .card:hover .circles{
+        opacity:100%;
+        transition: 500ms ease;
+    }
+    .skills__wrapper .skills__content .card:hover .picture{
+        transform: translateY(-7rem) translateX(1rem) scale(.7);
+        opacity: 0;
+        transition:500ms;
+        
+    }
+    .skills__wrapper .skills__content .card .picture{
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        
+    }
+    
+
+
+    /* SERRVCISES */
+    .services .services__card{
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+    .services__content .services__card:nth-child(2){
+        @apply my-[2rem] 
+    }
+    .services__content .services__card{
+        @apply hover:scale-[1.2] ease-in-out duration-[300ms]
+    }
+    .services__content .services__card{
+        @apply cursor-pointer 
+    }
+        
+
+    /* WORKS  */
+    .image__slider img{
+        @apply w-[20rem]
+    }
+    .image__slider img:nth-child(3){
+        @apply w-[30rem]
+    }
+
+
+   /* CONTACT */
+
+    .contact__platform li:nth-child(2){
+        @apply my-[1.5rem]
+    }
+    .contact__platform li:hover{
+        @apply lg:bg-white 
+    }
+    .contact__platform li:hover i{
+        @apply lg:text-primary 
+    }
+    .contact__platform li:hover a{
+    @apply lg:text-primary 
+}
+    .contact__input form .inputgroup input:nth-child(2){
+        @apply my-[1.5rem]
+    } 
+.contact__input form .send input {
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    
+    }    
+
+.contact {
+    background-position-y:35%;
+}
+
+.send input:hover{
+        @apply lg:bg-white lg:text-primary
+}
+
+.inputgroup input[type="text"], input[type="email"] {
+    @apply px-[1rem] outline-none text-[.8rem] py-[1.5rem] 
+}
+.send textarea{
+    @apply px-[1rem] outline-none text-[.8rem]
+}
+
+/* IMAGE__SLIDER */
+
+.tranding-slide {
+    height: 42rem;
+    position: relative;
+    }
+
+    .tranding-slide .tranding-slide-img img {
+        height: 42rem;
+        border-radius: 1rem;
+        object-fit: cover;
+    }
+
+    .swiper{
+        position: relative;
+    }
+    .tranding-slider-control {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .tranding-slider-control .swiper-button-prev span{
+        position: absolute;
+        top:22rem;
+        font-size:1.5rem;
+        left: 15rem;
+        background-color: #626D83;
+        padding: .5rem 1.2rem;
+        border-radius: 50%;
+        display: none;
+    }
+    .tranding-slider-control .swiper-button-next span{
+        position: absolute;
+        top:22rem;
+        font-size:1.5rem;
+        right:20rem;
+        background-color: #626D83;
+        padding: .5rem 1.2rem;
+        border-radius: 50%;
+        display: none;
+    }
+    .tranding-slider-control .swiper-button-prev,.swiper-button-next i{
+        color:white;
+    }
+
+    .tranding-slider-control .swiper-pagination {
+        position: relative;
+        width: 15rem;
+        bottom: 1rem;
+    }
+    .tranding-slider-control .swiper-pagination .swiper-pagination-bullet {
+        filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+    }
+    
+    .tranding-slider-control .swiper-pagination .swiper-pagination-bullet-active {
+        background: yellow;
+    }
+    
+    /* WORKS
+    .image__slider img{
+    @apply w-[34rem] border-[3px] border-primary
+    }
+    .image__slider img:nth-child(3){
+    @apply w-[50rem]
+    } */
+
+    /* BACKTOTOP */
+    .backtotop {
+        @apply fixed z-10 top-[58rem]  right-[1.9rem] border-[1px] border-black backdrop-blur-sm rounded-[50%] opacity-0 ease-in duration-[100ms] ;
+        }
+    .backtotop.show {
+        @apply opacity-100 top-[46.5rem] lg:top-[44rem]  ease-in duration-300;
+        }
+    .backtotop a span {
+        @apply text-[1.5rem] font-[900] flex justify-center items-center h-[2.5rem] w-[2.5rem];
+        }
+    .backtotop:hover{
+        @apply bg-primary rounded-[50%] text-white
+        }
+    
+
+}
+
+
+
+
+
+
+/* .tns-nav{
+    @apply text-center pt-[2.5rem]
+}
+
+.tns-nav button{
+    @apply bg-primary w-[1rem] h-[1rem] mx-[.2rem] rounded-[50%]
+}
+.tns-nav .tns-nav-active{
+    @apply bg-secondary
+} 
+
+.tns-controls{
+    @apply text-secondary absolute  z-[1] translate-y-[8rem] lg:translate-x-[32rem] opacity-[90%]
+}
+
+.tns-controls button:first-child{
+    @apply text-white bg-primary ml-[1.5rem] px-[1rem] py-[.5rem] rounded-[50%] 
+}
+.tns-controls button:last-child{
+    @apply text-white  bg-primary ml-[20rem] px-[1rem] py-[.5rem] rounded-[50%]
+}
+
+.tns-controls button:first-child:hover,.tns-controls button:last-child:hover{
+    @apply opacity-[75%] ease-linear duration-[200ms]
+} */
+
+
+ .swiper{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+   
+}
+
+.swiper-slide img{
+    margin:0 auto;   
+    border: 3px solid black;
+}
+
+.swiper-slide-active img{
+    @apply border-[3px] border-blue-500
+   
+}
+.swiper-button-next:after{
+    @apply text-white bg-primary p-[.2rem] rounded-[5px] absolute lg:right-[25rem]
+}
+.swiper-button-prev:after{
+    @apply text-white bg-primary p-[.2rem] rounded-[5px] absolute lg:left-[25rem]
+}
+.swiper-button-prev:hover, .swiper-button-next:hover{
+    @apply opacity-[65%]
+}
+
+
